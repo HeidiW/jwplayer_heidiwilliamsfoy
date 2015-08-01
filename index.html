@@ -9,7 +9,7 @@
 <body>
 <h1>JW Player Technical Assessment</h1>
 <h2>Heidi Williams-Foy</h2>
-<div id="firstEmbed">Here is the player...</div>
+<div id="firstEmbed">Here is easy task...</div>
 <script type="text/javascript">
 	var playerInstance = jwplayer('firstEmbed');
 	playerInstance.setup({
@@ -22,6 +22,20 @@
 	playerInstance.on('complete', function(e) {
 			alert("thanks for watching!");
 	});
+	</script>
+
+<div id="container">Here is the medium difficulty task...</div>​
+<a href="#" onclick="jwplayer('container').load({'file':'http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'image':'http://bob.jwplayer.com/~test/assets/MediumImage.jpg'}); jwplayer('container').play('true');return false;">Click here to watch the medium difficulty video</a>
+<script type="text/javascript">
+	var playerInstance = jwplayer('container');
+	playerInstance.setup({
+		file: "http://bob.jwplayer.com/~test/assets/MediumVideo.mp4",
+		image: "http://bob.jwplayer.com/~test/assets/MediumImage.jpg",
+		width: 640,
+		height: 360,
+		title: 'Medium Difficulty Video Embed'
+		});
+    	playerInstance.play(true);
 </script>
 </body>
 </html>
