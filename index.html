@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>JW Player Technical Assessment</title>
-		​<script src="/jwplayer/jwplayer.js"></script>
-		<script>jwplayer.key="iTUCk/lpCXS8LAzZhik7Mgjmw6Q8KP/3WoB7EjMn1ft48DqW+F49rA==";</script>
+		​<script src="https://glacial-dawn-6429.herokuapp.com/jwplayer/jwplayer.js"></script>
+		<script>jwplayer.key="oR+eh5agWPuRt7lteUZijntLVSG0BzAlaUjJ/w==";</script>
 </head>
 <body>
 <h1>JW Player Technical Assessment</h1>
@@ -13,11 +13,14 @@
 <script type="text/javascript">
 	var playerInstance = jwplayer('firstEmbed');
 	playerInstance.setup({
-		image: "http://bob.jwplayer.com/~test/assets/EasyImage.jpg"
-		file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4"
+		file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4",
+		image: "http://bob.jwplayer.com/~test/assets/EasyImage.jpg",
 		width: 640,
 		height: 360,
 		title: 'Easy Video Embed'
+	});
+	playerInstance.on('complete', function(e) {
+			alert("thanks for watching!");
 	});
 </script>
 </body>
