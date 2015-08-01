@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <title>JW Player Technical Assessment</title>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-		​<script src="jwplayer-7.0.0/jwplayer.js"></script>
+		​<script src="https://glacial-dawn-6429.herokuapp.com/jwplayer/jwplayer.js"></script>
 		<script>jwplayer.key="iTUCk/lpCXS8LAzZhik7Mgjmw6Q8KP/3WoB7EjMn1ft48DqW+F49rA==";</script>
 </head>
 <body>
@@ -17,12 +15,13 @@
 	playerInstance.setup({
 		image: "http://bob.jwplayer.com/~test/assets/EasyImage.jpg"
 		file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4"
-		width: 600,
-		height: 300,
+		width: 640,
+		height: 360,
+		title: 'Easy Video Embed'
 		events:{
 		playerInstance.on('complete', function(e) {
 			alert("thanks for watching!");
-			}
+			});
 	});
 </script>
 </body>
