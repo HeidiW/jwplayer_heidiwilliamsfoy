@@ -25,7 +25,7 @@
 	</script>
 
 <div id="container">Here is the medium difficulty task...</div>​
-<a href="#" onclick="jwplayer('container').load({'file':'http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'image':'http://bob.jwplayer.com/~test/assets/MediumImage.jpg'}); jwplayer('container').play('true');return false;">Click here to watch the medium difficulty video</a>
+<a href="#" onclick="jwplayer('container').load({'file':'http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'image':'http://bob.jwplayer.com/~test/assets/MediumImage.jpg'}); jwplayer('container').play('true');return false;">Click here to load the medium difficulty video</a>
 <script type="text/javascript">
 	var playerInstance = jwplayer('container');
 	playerInstance.setup({
@@ -37,5 +37,26 @@
 		});
     	playerInstance.play(true);
 </script>
+
+<div id="thirdEmbed">Here is the difficult task</div>
+<script type="text/javascript">
+	var playerInstance = jwplayer('thirdEmbed');
+	playerInstance.setup({
+		file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4",
+		image: "http://bob.jwplayer.com/~test/assets/HardImage1.jpg",
+		width: 640,
+		height: 360,
+		title: 'Difficult Video Embed'
+		});
+</script>
+<div id="img">
+<img src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg">
+<script type="text/javascript">
+	playerInstance.on('time', function (event) { if (event.position == 5) { this.pause(true); img.load({
+	file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4",
+	image: "http://bob.jwplayer.com/~test/assets/HardImage2.jpg"
+	});
+	</script>
+</div>
 </body>
 </html>
