@@ -1,15 +1,45 @@
 <html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>JW Player Technical Assessment</title>
 		​<script src="https://glacial-dawn-6429.herokuapp.com/jwplayer/jwplayer.js"></script>
 		<script>jwplayer.key="oR+eh5agWPuRt7lteUZijntLVSG0BzAlaUjJ/w==";</script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 </head>
 <body>
 <h1>JW Player Technical Assessment</h1>
 <h2>Heidi Williams-Foy</h2>
-<div id="firstEmbed">Here is easy task...</div>
+<strong>Answers to tech assessment questions</strong>
+<p>1) Online Video Formats</p>
+<p>Please give a brief description to demonstrate your familiarity with the following formats:</p> 
+<p>MP4: A classic and very versatile format. It is based on the Apple Quicktime format .mov.</p>
+
+<p>HLS: A relatively new format, was created by Apple for use with iOS, Apple TV, and Mac later versions.</p>
+</p>RTMP: Real Time Messaging Protocol is "a system for delivering on demand and live media to Adobe Flash Applications..." (quoted from the JW Player documentation). Drawbacks include vunerability to being blocked by firewalls and possible stream stuttering if the connection is dropped for any length of time.</p>
+<p>FLV: Adobe Flash video. Has been around for a long time but is increasingly not supported in modern web browsers.</p>
+<p>WEBM: WEBM is an open media format (open source sponsored by Google) whose core technologies are HTTP, HTML, and TCP/IP. Advantages include high efficiency bandwidth usage and the high quality of the streams, also good for use on low power devices.</p>
+
+<p>2) Which of the above video formats do not work on mobile devices?</p>
+
+<p>RTMP and FLV do not work on mobile devices.
+</p>
+
+<p><strong>2) Online Advertising</strong></p>
+<p>Would you expect the following VAST ad tag to deliver an ad correctly with our player if the viewer is using an up-to-date version of Chrome?</p>
+
+<p>http://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test</p>
+
+<p>Answer: Yes</p>
+
+<p>What is the duration of the ad delivered by the ad tag?</p>
+<p>Answer: 13 seconds</p>
+
+<div class="video">
+<h2>Video Embed Challenges</h2>
+<p>Easy Embed Task</p>
+<div id="firstEmbed"></div>
 <script type="text/javascript">
 	var playerInstance = jwplayer('firstEmbed');
 	playerInstance.setup({
@@ -23,8 +53,8 @@
 			alert("thanks for watching!");
 	});
 	</script>
-
-<div id="container">Here is the medium difficulty task...</div>​
+<p>Medium Difficulty Task</p>
+<div id="container"></div>​
 <a href="#" onclick="jwplayer('container').load({'file':'http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'image':'http://bob.jwplayer.com/~test/assets/MediumImage.jpg'}); jwplayer('container').play('true');return false;">Click here to load the medium difficulty video</a>
 <script type="text/javascript">
 	var playerInstance = jwplayer('container');
@@ -37,7 +67,7 @@
 		});
     	playerInstance.play(true);
 </script>
-
+<p>Difficult Embed Task</p>
 <div id="thirdEmbed">Here is the difficult task</div>
 <script type="text/javascript">
 	var playerInstance = jwplayer('thirdEmbed');
@@ -47,16 +77,12 @@
 		width: 640,
 		height: 360,
 		title: 'Difficult Video Embed'
-		});
+		//events:{ onTime: function(event) { if (event.position == 5) { this.pause(); img.load = ("http://bob.jwplayer.com/~test/assets/HardImage1.jpg");; } } } 
+}); 
 </script>
+
 <div id="img">
-<img src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg">
-<script type="text/javascript">
-	playerInstance.on('time', function (event) { if (event.position == 5) { this.pause(true); img.load({
-	file: "http://bob.jwplayer.com/~test/assets/EasyVideo.mp4",
-	image: "http://bob.jwplayer.com/~test/assets/HardImage2.jpg"
-	});
-	</script>
+<img src="http://bob.jwplayer.com/~test/assets/HardImage2.jpg">
 </div>
 </body>
 </html>
