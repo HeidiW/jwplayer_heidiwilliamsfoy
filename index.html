@@ -5,7 +5,7 @@
     <title>JW Player Technical Assessment</title>
 		​<script src="https://glacial-dawn-6429.herokuapp.com/jwplayer/jwplayer.js"></script>
 		<script>jwplayer.key="oR+eh5agWPuRt7lteUZijntLVSG0BzAlaUjJ/w==";</script>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' >
 		<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 </head>
 <body>
@@ -63,7 +63,12 @@
 		image: "http://bob.jwplayer.com/~test/assets/MediumImage.jpg",
 		width: 640,
 		height: 360,
-		title: 'Medium Difficulty Video Embed'
+		title: 'Medium Difficulty Video Embed',
+		primary: 'flash',
+		advertising: {
+				client: 'vast',
+				tag: "http://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test",
+			}
 		});
     	playerInstance.play(true);
 </script>
@@ -77,12 +82,28 @@
 		width: 640,
 		height: 360,
 		title: 'Difficult Video Embed'
-		//events:{ onTime: function(event) { if (event.position == 5) { this.pause(); img.load = ("http://bob.jwplayer.com/~test/assets/HardImage1.jpg");; } } } 
+		// events:{ onTime: function changeSrc()
+		// 	var obj = document.getElementById('img');
+		// 	var img1 = "http://bob.jwplayer.com/~test/assets/HardImage1.jpg";
+		// 	var img2 = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg";
+		// 	if (event.position == 5) { this.pause(); document.img.innerHTML.replace = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg"
+	// }); 
 }); 
 </script>
-
 <div id="img">
 <img src="http://bob.jwplayer.com/~test/assets/HardImage2.jpg">
 </div>
+<p>Extra credit question one</p>
+<p>The player would not display correctly because the quotation marks at the end of the
+image and file options were formatted wrong, and the "image:" option needed a comma at the end. This will not display correctly on mobile because "flash" is the "primary:" option.</p>
+<div id="myVideo">Loading your player…</div> 
+<script type="text/javascript"> 
+jwplayer("myVideo").setup({ 
+file: "http://qa.jwplayer.com/~todd/bunny.flv", 
+image: "http://qa.jwplayer.com/~todd/bunny.jpg", 
+primary: "flash" 
+}); 
+//http://support.jwplayer.com/customer/portal/articles/1480795-example-ad-impression-verification
+</script>
 </body>
 </html>
