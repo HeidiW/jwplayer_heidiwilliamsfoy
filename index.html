@@ -83,9 +83,7 @@
 </script>
 <p>Difficult Embed Task</p>
 <div id="thirdEmbed">Here is the difficult task</div>
-<div id="img">
-<img src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg">
-</div>
+<img id="img" src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg" alt="I hope I can swap out this image"/>
 <script type="text/javascript">
 	var playerInstance = jwplayer('thirdEmbed');
 	playerInstance.setup({
@@ -99,17 +97,17 @@
 			var obj = document.getElementById("img");
 			obj.src = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg";
 		}
-}); 
+}; 
 </script>
 <p>Extra credit question one</p>
-<p>The player would not display correctly because the quotation marks at the end of the
-image and file options were formatted wrong, and the "image:" option needed a comma at the end. This will not display correctly on mobile because "flash" is the "primary:" option.</p>
-<div id="myVideo">Loading your player…</div> 
+	<p>The player would not display correctly because the quotation marks at the end of the
+	image and file options were formatted wrong, and the "image:" option needed a comma at the end. This will not display correctly on mobile because "flash" is the "primary:" option.</p>
+	<div id="myVideo">Loading your player…</div> 
 <script type="text/javascript"> 
-jwplayer("myVideo").setup({ 
-file: "http://qa.jwplayer.com/~todd/bunny.flv", 
-image: "http://qa.jwplayer.com/~todd/bunny.jpg", 
-primary: "flash" 
+	jwplayer("myVideo").setup({ 
+	file: "http://qa.jwplayer.com/~todd/bunny.flv", 
+	image: "http://qa.jwplayer.com/~todd/bunny.jpg", 
+	primary: "flash" 
 }); 
 //http://support.jwplayer.com/customer/portal/articles/1480795-example-ad-impression-verification
 </script>
