@@ -55,8 +55,17 @@
 	</script>
 <p>Medium Difficulty Task</p>
 <div id="container"></div>​
+<button id="playbutton" onclick="playMyAd()">Ad will play</button>
 <a href="#" onclick="jwplayer('container').load({'file':'http://bob.jwplayer.com/~test/assets/MediumVideo.mp4', 'image':'http://bob.jwplayer.com/~test/assets/MediumImage.jpg'}); jwplayer('container').play('true');return false;">Click here to load the medium difficulty video</a>
 <script type="text/javascript">
+	var btn = document.getElementById("playbutton");
+	var tag = "http://www.adotube.com/php/services/player/OMLService.php?avpid=oRYYzvQ&platform_version=vast20&ad_type=linear&groupbypass=1&HTTP_REFERER=http://www.longtailvideo.com&video_identifier=longtailvideo.com,test"
+// Only play an ad if the video is actually playing.
+	function playMyAd() {
+  		if(playerInstance.getState() == "PLAYING") {
+    	playerInstance.playAd(tag);
+  }
+};
 	var playerInstance = jwplayer('container');
 	playerInstance.setup({
 		file: "http://bob.jwplayer.com/~test/assets/MediumVideo.mp4",
@@ -74,6 +83,9 @@
 </script>
 <p>Difficult Embed Task</p>
 <div id="thirdEmbed">Here is the difficult task</div>
+<div id="img">
+<img src="http://bob.jwplayer.com/~test/assets/HardImage1.jpg">
+</div>
 <script type="text/javascript">
 	var playerInstance = jwplayer('thirdEmbed');
 	playerInstance.setup({
@@ -81,18 +93,14 @@
 		image: "http://bob.jwplayer.com/~test/assets/HardImage1.jpg",
 		width: 640,
 		height: 360,
-		title: 'Difficult Video Embed'
-		// events:{ onTime: function changeSrc()
-		// 	var obj = document.getElementById('img');
-		// 	var img1 = "http://bob.jwplayer.com/~test/assets/HardImage1.jpg";
-		// 	var img2 = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg";
-		// 	if (event.position == 5) { this.pause(); document.img.innerHTML.replace = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg"
-	// }); 
+		title: 'Difficult Video Embed',
+		events:{ onTime: function(event) {
+			if (event.position == 5) { this.pause(true); 
+			var obj = document.getElementById("img");
+			obj.src = "http://bob.jwplayer.com/~test/assets/HardImage2.jpg";
+		}
 }); 
 </script>
-<div id="img">
-<img src="http://bob.jwplayer.com/~test/assets/HardImage2.jpg">
-</div>
 <p>Extra credit question one</p>
 <p>The player would not display correctly because the quotation marks at the end of the
 image and file options were formatted wrong, and the "image:" option needed a comma at the end. This will not display correctly on mobile because "flash" is the "primary:" option.</p>
